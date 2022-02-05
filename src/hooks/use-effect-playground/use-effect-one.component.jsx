@@ -10,11 +10,11 @@ export default function App() {
 
   useEffect(() => {
     console.log("sideEFFECT-1: Always RUNs after the render");
-  }, []); //<- useEffect will run whenever there is a change
-
+  }); //<- useEffect will run whenever there is a change to any state/props
+  
   useEffect(() => {
     console.log("sideEFFECT-2: RUNs ONCE After Render");
-  }, []); //<- useEffect will run whenever there is a change
+  }, []); //<- this useEffect will run once, because the [] is initiallized once & there is no states/props provided to watch for
 
   useEffect(() => {
     console.log(`sideEFFECT-3 : RUNs on init/change of toggle <${toggle}>`);
@@ -36,7 +36,7 @@ export default function App() {
     console.log(
       `------------> counter-3 changed (from ${counter3} into ${newValue})`
     );
-  }, [toggle]);
+  }, [toggle]); //<- this useEffect will run when the state <toggle> is initialized/changed
 
   useEffect(() => {
     console.log(
@@ -47,11 +47,11 @@ export default function App() {
     console.log(
       `------------> renderCount changed (from ${renderCount} into ${newValue})`
     );
-  }, [counter1, counter2, counter3]);
+  }, [counter1, counter2, counter3]);  //<- this useEffect will run when the state <counter1/counter2/counter3> is initialized/changed
 
   useEffect(() => {
     console.log("sideEFFECT-5: Run Once After Render");
-  }, []); //<- useEffect will run whenever there is a change
+  }, []); //<- this useEffect will run once, because the [] is initiallized once & there is no states/props provided to watch for
 
   const handleClick = () => {
     let toggleValue = toggle === undefined ? false : toggle;

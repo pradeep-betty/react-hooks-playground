@@ -19,19 +19,19 @@ export default function App() {
   useEffect(() => {
     console.log(`sideEFFECT-3 : RUNs on init/change of toggle <${toggle}>`);
 
-    let newValue = (counter1 || -1) + 1;
+    let newValue = (counter1 || 0) + 1;
     setCounter1(newValue);
     console.log(
       `------------> counter-1 will be changed (from ${counter1} into ${newValue}) on next run`
     );
 
-    newValue = (counter2 || -1) + 1;
+    newValue = (counter2 || 0) + 1;
     setCounter2(newValue);
     console.log(
       `------------> counter-2 will be changed (from ${counter2} into ${newValue}) on next run`
     );
 
-    newValue = (counter3 || -1) + 1;
+    newValue = (counter3 || 0) + 1;
     setCounter3(newValue);
     console.log(
       `------------> counter-3 will be changed (from ${counter3} into ${newValue}) on next run`

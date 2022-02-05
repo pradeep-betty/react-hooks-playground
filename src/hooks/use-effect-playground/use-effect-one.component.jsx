@@ -11,7 +11,7 @@ export default function App() {
   useEffect(() => {
     console.log("sideEFFECT-1: Always RUNs after the render");
   }); //<- useEffect will run on init & whenever there is a change to any state/props
-  
+
   useEffect(() => {
     console.log("sideEFFECT-2: RUNs ONCE After Render");
   }, []); //<- this useEffect will run once, because the [] is initiallized once & there is no states/props provided to watch for
@@ -47,10 +47,10 @@ export default function App() {
     console.log(
       `------------> renderCount will be changed (from ${renderCount} into ${newValue}) on next run`
     );
-  }, [counter1, counter2, counter3]);  //<- this useEffect will run when the state <counter1/counter2/counter3> is initialized/changed
+  }, [counter1, counter2, counter3]); //<- this useEffect will run when the state <counter1/counter2/counter3> is initialized/changed
 
   useEffect(() => {
-    console.log("sideEFFECT-2: RUNs ONCE After Render");
+    console.log("sideEFFECT-5: RUNs ONCE After Render");
   }, []); //<- this useEffect will run once, because the [] is initiallized once & there is no states/props provided to watch for
 
   const handleClick = () => {
@@ -61,9 +61,11 @@ export default function App() {
   const localVariable = 500;
 
   const logRenderValues = () => {
-    console.log("LOGGED FROM RENDER and the VALUES ARE :");
     console.log(
-      `------------> localVariable: <${localVariable}> counter1: <${counter1}> / counter2: <${counter2}> / counter3: <${counter3}> / renderCount: <${renderCount}>`
+      "RENDERED in DOM -> since the following state/prop values are init/changed:"
+    );
+    console.log(
+      `------------> localVariable: <${localVariable}> toggle<${toggle}> counter1: <${counter1}> / counter2: <${counter2}> / counter3: <${counter3}> / renderCount: <${renderCount}>`
     );
     return (
       <div className="App">

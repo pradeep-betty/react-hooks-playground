@@ -5,6 +5,27 @@
     2. 1st Normal-Updates uses the refSnapshot & updates the newSnapShot
     3. 2nd Async-Updates uses the asyncRefSnapshot update the newSnapShot
     4. React compares the newSnapshot with the oldSnapshot and updates the DOM
+    5. So as of React v17 -> setStates inside an async SHOULD NOT be individualy set, so instead of using seperate setStates and single object should be used and all updates should be set via single setState call 
+       1. The below is costlly inside an async call:
+        ```
+          asyncFunction () => {
+            1. setState({prop1: 'someValue1'}); // -> triggers a render
+            2. setState({prop2: 'someValue2'}); // -> triggers another render
+        }
+       ```
+       2. Solution (not costly)
+        ```
+          asyncFunction () => {
+            setState ({           -> triggers a single render
+              prop1: 'someValue1' ,
+              prop2 : 'someValue2' 
+            });
+        }
+       ```
+    6. Contrary to the async,.. individual setStates are batch updated and are not costly in normal updates
+       1. the following is not costly as they are bach updated by react
+          1. setState({prop1: 'someValue1'});
+          2. setState({prop2: 'someValue2'});
 ```
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";

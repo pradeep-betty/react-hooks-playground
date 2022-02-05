@@ -22,19 +22,19 @@ export default function App() {
     let newValue = (counter1 || -1) + 1;
     setCounter1(newValue);
     console.log(
-      `------------> counter-1 changed (from ${counter1} into ${newValue})`
+      `------------> counter-1 will be changed (from ${counter1} into ${newValue})`
     );
 
     newValue = (counter2 || -1) + 1;
     setCounter2(newValue);
     console.log(
-      `------------> counter-2 changed (from ${counter2} into ${newValue})`
+      `------------> counter-2 will be changed (from ${counter2} into ${newValue})`
     );
 
     newValue = (counter3 || -1) + 1;
     setCounter3(newValue);
     console.log(
-      `------------> counter-3 changed (from ${counter3} into ${newValue})`
+      `------------> counter-3 will be changed (from ${counter3} into ${newValue})`
     );
   }, [toggle]); //<- this useEffect will run when the state <toggle> is initialized/changed
 
@@ -45,7 +45,7 @@ export default function App() {
     let newValue = (renderCount || 0) + 1;
     setRenderCount(newValue);
     console.log(
-      `------------> renderCount changed (from ${renderCount} into ${newValue})`
+      `------------> renderCount will be changed (from ${renderCount} into ${newValue})`
     );
   }, [counter1, counter2, counter3]);  //<- this useEffect will run when the state <counter1/counter2/counter3> is initialized/changed
 

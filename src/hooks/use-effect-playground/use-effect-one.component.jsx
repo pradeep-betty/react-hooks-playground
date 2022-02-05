@@ -8,16 +8,6 @@ export default function App() {
   const [counter3, setCounter3] = useState(undefined);
   const [renderCount, setRenderCount] = useState(undefined);
 
-  /** useEffect:
-   *  -> default behaviour : it runs whenever there is an init or a change in the state of the function
-   *  -> we can change this behaviour
-   *      1) we can leverage the default behavour and ask it to run whenever there is an 
-   *          init or a change of any state/props of the function
-   *      2) we can ask it to run
-   *  
-   * 
-   */
-
   useEffect(() => {
     console.log("first render : component mounted");
   }, []); //<- useEffect will run whenever there is a change

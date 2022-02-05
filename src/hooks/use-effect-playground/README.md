@@ -2,7 +2,8 @@
   -> it runs AFTER the following 3 steps:
         1) the function props(arguments) are derived from the parent
         2) the function states are created (initialized) using useState(...)
-        3) the function is rendered with the above states and props
+        3) all the variables (let/const) & functions are instantiated
+        4) render() is called. (i.e) function is rendered with the above states and props
 
   -> DEFAULT BEHAVIOUR : it runs whenever there is an init or a change in the state of the function
 

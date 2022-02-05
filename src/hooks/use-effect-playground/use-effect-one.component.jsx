@@ -9,7 +9,7 @@ export default function App() {
   const [renderCount, setRenderCount] = useState(undefined);
 
   useEffect(() => {
-    console.log("first render : component mounted");
+    console.log("EFFECT : Run Once After Render UseEffect-1");
   }, []); //<- useEffect will run whenever there is a change
 
   useEffect(() => {
@@ -45,15 +45,21 @@ export default function App() {
     );
   }, [counter1, counter2, counter3]);
 
+  useEffect(() => {
+    console.log("EFFECT : Run Once After Render UseEffect-2");
+  }, []); //<- useEffect will run whenever there is a change
+
   const handleClick = () => {
     let toggleValue = toggle === undefined ? false : toggle;
     setToggle(!toggleValue);
   };
 
+  const localVariable = 500;
+
   const logRenderValues = () => {
     console.log("LOGGED FROM RENDER and the VALUES ARE :");
     console.log(
-      `------------> counter1: <${counter1}> / counter2: <${counter2}> / counter3: <${counter3}> / renderCount: <${renderCount}>`
+      `------------> localVariable: <${localVariable}> counter1: <${counter1}> / counter2: <${counter2}> / counter3: <${counter3}> / renderCount: <${renderCount}>`
     );
     return (
       <div className="App">

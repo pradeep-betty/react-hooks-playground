@@ -55,9 +55,10 @@ export default function App() {
 
   const handleClick = () => {
     let toggleValue = toggle === undefined ? false : toggle;
+    let newValue = !toggleValue;
     setToggle(!toggleValue);
     console.log(
-      `------------> toggle will be changed (from ${toggleValue} into ${!toggleValue}) on next run`
+      `------------> toggle will be changed (from ${toggle} into ${!newValue}) on next run`
     );
   };
 

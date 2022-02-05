@@ -9,11 +9,15 @@ export default function App() {
   const [renderCount, setRenderCount] = useState(undefined);
 
   useEffect(() => {
-    console.log("EFFECT : Run Once After Render UseEffect-1");
-  }, []); //<- this useEffect will run once, because the [] is initiallized once & there is no states provided to watch for
+    console.log("sideEFFECT-1: Always RUNs after the render");
+  }, []); //<- useEffect will run whenever there is a change
 
   useEffect(() => {
-    console.log(`EFFECT : fired on init/change of toggle <${toggle}>`);
+    console.log("sideEFFECT-2: RUNs ONCE After Render");
+  }, []); //<- useEffect will run whenever there is a change
+
+  useEffect(() => {
+    console.log(`sideEFFECT-3 : RUNs on init/change of toggle <${toggle}>`);
 
     let newValue = (counter1 || -1) + 1;
     setCounter1(newValue);
@@ -32,24 +36,22 @@ export default function App() {
     console.log(
       `------------> counter-3 changed (from ${counter3} into ${newValue})`
     );
-  }, [toggle]); //<- this useEffect will run when the toggle is initialized/changed
+  }, [toggle]);
 
   useEffect(() => {
     console.log(
-      `EFFECT : fired on init/change of counter1 <${counter1}> /  counter2 <${counter2}> / counter3 <${counter3}>`
+      `sideEFFECT-4: RUNs on init/change of counter1 <${counter1}> /  counter2 <${counter2}> / counter3 <${counter3}>`
     );
     let newValue = (renderCount || 0) + 1;
     setRenderCount(newValue);
     console.log(
       `------------> renderCount changed (from ${renderCount} into ${newValue})`
     );
-  }, 
-    [counter1, counter2, counter3]
-  ); //<- this useEffect will run when the counter1/counter2/counter3 is initialized/changed
+  }, [counter1, counter2, counter3]);
 
   useEffect(() => {
-    console.log("EFFECT : Run Once After Render UseEffect-2");
-  }, []); //<- this useEffect will run once, because the [] is initiallized once & there is no states provided to watch for
+    console.log("sideEFFECT-5: Run Once After Render");
+  }, []); //<- useEffect will run whenever there is a change
 
   const handleClick = () => {
     let toggleValue = toggle === undefined ? false : toggle;

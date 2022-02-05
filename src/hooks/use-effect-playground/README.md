@@ -9,8 +9,8 @@
            2) so React executes the usual logic of the funtion and then applies the sideEffects
               1) A function with useEffect should be considered as a Tablet with some sideEffects
                  1) FIRST Body uses the tablet to clear the illness, in a simillar way React  
-                     executes the function and render something in the dom
-                 2) NEXT the body produces some sindeeffects with the Tablet, in a smillar way REACT uses the function and executes its useEffects.
+                     executes the function which <return> some thing to render in the dom
+                 2) NEXT the body produces some sindeeffects with the Tablet, in a smillar way REACT after the function <return>, executes its useEffects.
 
   -> DEFAULT BEHAVIOUR : it runs whenever there is an init or a change in the state of the function
 

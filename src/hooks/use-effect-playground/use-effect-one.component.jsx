@@ -10,7 +10,7 @@ export default function App() {
 
   useEffect(() => {
     console.log("sideEFFECT-1: Always RUNs after the render");
-  }); //<- useEffect will run whenever there is a change to any state/props
+  }); //<- useEffect will run on init & whenever there is a change to any state/props
   
   useEffect(() => {
     console.log("sideEFFECT-2: RUNs ONCE After Render");

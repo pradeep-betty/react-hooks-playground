@@ -50,7 +50,7 @@ export default function App() {
   }, [counter1, counter2, counter3]);  //<- this useEffect will run when the state <counter1/counter2/counter3> is initialized/changed
 
   useEffect(() => {
-    console.log("sideEFFECT-1: Always RUNs after the render");
+    console.log("sideEFFECT-5: Always RUNs after the render");
   }, []); //<- this useEffect will run once, because the [] is initiallized once & there is no states/props provided to watch for
 
   const handleClick = () => {
